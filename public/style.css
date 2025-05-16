@@ -1,0 +1,123 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --background: #f8f9fa;
+  --text-color: #2c3e50;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", "Roboto", system-ui, sans-serif;
+  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--text-color);
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.example-section {
+  margin: 2rem 0;
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.examples {
+  display: grid;
+  gap: 1rem;
+}
+
+.example-link {
+  display: block;
+  padding: 1rem;
+  background: var(--background);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  transition: all 0.2s ease;
+  border: 1px solid #e9ecef;
+}
+
+.example-link:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+code {
+  font-family: "Fira Code", "Courier New", monospace;
+  background: #f1f3f5;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre {
+  background: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.output {
+  font-family: "Fira Code", "Courier New", monospace;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}

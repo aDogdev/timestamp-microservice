@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timestamp Microservice</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🕒 Timestamp Microservice</h1>
+      <p>Convert dates between Unix and UTC formats</p>
+    </header>
+
+    <div class="container">
+      <section class="example-section">
+        <h2>📌 Usage Examples</h2>
+        <div class="examples">
+          <a href="/api/2023-10-10" class="example-link">
+            <code>/api/2023-10-10</code>
+          </a>
+          <a href="/api/1696896000000" class="example-link">
+            <code>/api/1696896000000</code>
+          </a>
+          <a href="/api" class="example-link">
+            <code>/api</code> (current date)
+          </a>
+        </div>
+      </section>
+
+      <section class="example-section">
+        <h2>📤 Output Format</h2>
+        <pre class="output">
+{
+    "unix": 1696896000000,
+    "utc": "Tue, 10 Oct 2023 00:00:00 GMT"
+}</pre
+        >
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        Project developed as part of the
+        <a
+          href="https://www.freecodecamp.org/learn/back-end-development-and-apis/"
+          target="_blank"
+          rel="noopener"
+        >
+          freeCodeCamp Back End Development Certification </a
+        >.
+      </p>
+      <p>
+        Created by aDog - <a href="https://github.com/yourusername">GitHub</a>
+      </p>
+    </footer>
+  </body>
+</html>
