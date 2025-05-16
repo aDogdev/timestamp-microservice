@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 app.use(express.static("public"));
 
@@ -9,17 +12,21 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/:date?", (req, res) => {
-  let dateParam = req.params.date;
+  const { date: dateParam } = req.params;
   let date;
 
   if (!dateParam) {
     date = new Date();
+    return res.json({
+      unix: date.getTime(),
+      utc: date.toUTCString(),
+    });
+  }
+
+  if (/^\d+$/.test(dateParam)) {
+    date = new Date(Number(dateParam));
   } else {
-    if (/^\d+$/.test(dateParam)) {
-      date = new Date(parseInt(dateParam));
-    } else {
-      date = new Date(dateParam);
-    }
+    date = new Date(dateParam);
   }
 
   if (date.toString() === "Invalid Date") {
@@ -32,6 +39,4 @@ app.get("/api/:date?", (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+app.listen(port, () => console.log(`Server running on port ${port}`));
